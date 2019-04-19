@@ -1,0 +1,46 @@
+
+Kotlin與Java Callback比較
+第八章：Lambda as parameters
+
+========= Java =========
+
+class A {
+    interface Callback {
+        public void onDone()
+    }
+
+    private fun action(Callback callback) {
+        // Do something
+        // ...
+        callback.onDone();
+    }
+}
+
+// 使用情境
+A a = new A()
+Callback callback = new Callback() {
+    @Override
+    public void onDone() {
+        // Do something
+    }
+}
+a.action(callback)
+
+
+========= Kotlin =========
+
+class A {
+    private fun action(onDone: () -> Unit) {
+        // Do something
+        // ...
+        onDone()
+    }
+}
+
+// 使用情境
+val a = A()
+a.action {
+    // Do something
+}
+
+
