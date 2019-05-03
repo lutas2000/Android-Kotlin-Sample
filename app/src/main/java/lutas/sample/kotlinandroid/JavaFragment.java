@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -37,9 +38,16 @@ public class JavaFragment extends Fragment implements Reportable {
             }
         });
 
-
         TextView textView = view.findViewById(R.id.content_tv);
         textView.setText("Java Fragment");
+
+        EditText editText = view.findViewById(R.id.editText);
+        EditTextUtil.setOnTextChangedListener(editText, new EditTextUtil.Callback() {
+            @Override
+            public void onChanged(String text) {
+                Log.d(TAG, "text changed: "+ text);
+            }
+        });
     }
 
     private void replaceFragment(Fragment fragment) {

@@ -28,13 +28,15 @@ class MainActivity : AppCompatActivity() {
         /**
          * Safe Cast
          */
-        // (currentFragment as? Reportable)?.report()
+//         (currentFragment as? Reportable)?.report()
 
         /**
          * Type Check and Smart Cast
          */
         currentFragment?.let {
-            if (it is Reportable) it.report()
+            if (it is Reportable) {
+                it.report()
+            }
         }
     }
 }

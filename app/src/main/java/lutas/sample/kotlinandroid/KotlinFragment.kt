@@ -34,8 +34,7 @@ class KotlinFragment: Fragment(), Reportable {
          */
         val editText = view.findViewById<EditText>(R.id.editText)
         editText.setOnTextChangedListener {
-            val msg = it ?: "null"
-            Log.d(TAG, "text changed: $msg")
+            Log.d(TAG, "text changed: $it")
         }
     }
 

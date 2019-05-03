@@ -7,10 +7,10 @@ import android.widget.EditText
 /**
  * 示範Extension Function和Callback
  */
-fun EditText.setOnTextChangedListener(onChanged: (String?) -> Unit) {
+fun EditText.setOnTextChangedListener(onChanged: (String) -> Unit) {
     addTextChangedListener(object: TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-            onChanged(s?.toString())
+        override fun afterTextChanged(s: Editable) {
+            onChanged(s.toString())
         }
 
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

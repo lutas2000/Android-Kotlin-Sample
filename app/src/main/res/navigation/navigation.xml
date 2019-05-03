@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation"
+            app:startDestination="@id/mainFragment">
+
+    <fragment android:id="@+id/mainFragment"
+              android:name="lutas.sample.kotlinandroid.MainFragment"
+              android:label="fragment_main"
+              tools:layout="@layout/fragment_main">
+        <action android:id="@+id/action_mainFragment_to_kotlinFragment" app:destination="@id/kotlinFragment"/>
+        <action android:id="@+id/action_mainFragment_to_javaFragment" app:destination="@id/javaFragment"/>
+    </fragment>
+    <fragment android:id="@+id/kotlinFragment"
+              android:name="lutas.sample.kotlinandroid.KotlinFragment"
+              android:label="Kotlin Fragment"
+              tools:layout="@layout/fragment_child">
+        <action android:id="@+id/action_kotlinFragment_to_mainFragment2" app:destination="@id/mainFragment"/>
+    </fragment>
+    <fragment android:id="@+id/javaFragment"
+              android:name="lutas.sample.kotlinandroid.JavaFragment"
+              android:label="Java Fragment"
+              tools:layout="@layout/fragment_child">
+        <action android:id="@+id/action_javaFragment_to_mainFragment" app:destination="@id/mainFragment"/>
+    </fragment>
+</navigation>
